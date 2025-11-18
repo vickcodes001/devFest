@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Raymond Chuma-Onwuoku",
+    "title": "CEO @ The Garage",
+    "linkedin": "https://www.linkedin.com/in/raymondchuma/",
+    "x": "https://x.com/TopBoyRayy",
+    "image": "https://res.cloudinary.com/dpectrfhh/image/upload/c_fill,w_400,h_400,q_auto/v1732990322/raymond_ymjwjs.webp",
+    "session": "panel host"
+  },
+  {
+    "name": "Sophia Ahuoyiza Abubakar",
+    "title": "founder @ tabi",
+    "linkedin": "https://www.linkedin.com/in/sophia-abubakar/",
+    "x": "https://x.com/ahuoyiza_",
+    "image": "https://res.cloudinary.com/dpectrfhh/image/upload/c_fill,w_400,h_400,q_auto/v1732990321/Sophia_eeiccu.webp",
+    "session": "panel speaker"
+  },
+  {
+    "name": "Eliezer Ajah",
+    "title": "Head, Talent Development and outsourcing @ Genesys tech hub",
+    "linkedin": "https://www.linkedin.com/in/eliezerajah/",
+    "x": "https://x.com/eliezerajah",
+    "image": "https://res.cloudinary.com/dpectrfhh/image/upload/c_fill,w_400,h_400,q_auto/v1732990322/Eliezer_-_Ezra_xfv1s8.webp",
+    "session": "panel speaker"
+  },
+  {
+    "name": "Augusta Nneka",
+    "title": "Head of Strategic Communications @ ANSIPPA",
+    "linkedin": "https://ng.linkedin.com/in/augusta-nneka-b32b981b4",
+    "x": "https://x.com/nneka_augusta",
+    "image": "https://res.cloudinary.com/dpectrfhh/image/upload/c_fill,w_400,h_400,q_auto/v1732990322/Augusta_Nnadi_-_Head_of_Strategic_Communications_b3z8ny.webp",
+    "session": "panel speaker"
+  },
+  {
+    "name": "Daberechi Ubachukwu",
+    "title": "Head of Product Development @ Tenece Professional Services",
+    "linkedin": "https://ng.linkedin.com/in/daberechi-ubachukwu",
+    "x": "",
+    "image": "https://res.cloudinary.com/dpectrfhh/image/upload/c_fill,w_400,h_400,q_auto/v1732994253/Dabz_md3o8f.webp",
+    "session": "panel speaker"
+  }
+]

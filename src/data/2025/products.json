@@ -1,0 +1,129 @@
+[
+  {
+    "id": "coca-cola",
+    "name": "Coca Cola",
+    "category": "brand",
+    "tagline": "The taste that refreshes",
+    "website": "https://cocacola.com",
+    "description": "Coca Cola has been a global leader in beverage innovation, creating refreshing experiences that bring people together across continents and cultures.",
+    "status": "Active",
+    "industry": "Brand",
+    "founders": "John Pemberton",
+    "image": "/images/2025/cola.jpg",
+    "gradient": {
+      "from": "red-500",
+      "to": "red-600"
+    },
+    "colors": {
+      "primary": "#E61F2B",
+      "background": "#FEF0F0",
+      "text": "#E61F2B"
+    }
+  },
+  {
+    "id": "costa-coffee",
+    "name": "Costa Coffee",
+    "category": "brand",
+    "tagline": "Premium coffee experience",
+    "website": "https://costa.com",
+    "description": "Costa Coffee delivers premium coffee experiences with authentic taste and quality, serving millions of customers worldwide with passion and expertise.",
+    "status": "Active",
+    "industry": "Brand",
+    "founders": "Sergio Costa, Bruno Costa",
+    "image": "/images/2025/costa.jpg",
+    "gradient": {
+      "from": "blue-700",
+      "to": "blue-800"
+    },
+    "colors": {
+      "primary": "#00405E",
+      "background": "#F0F8FF",
+      "text": "#00405E"
+    }
+  },
+  {
+    "id": "opay",
+    "name": "Opay",
+    "category": "products",
+    "tagline": "Banking finance for all",
+    "website": "https://opayweb.com",
+    "description": "Opay enables users across the continent to purchase bitcoin as an asset class, providing an automated way to do this while protecting them from the downside (volatility) and expanding the use case for cryptocurrencies by enabling businesses to receive them as payments.",
+    "status": "Active",
+    "industry": "Brand",
+    "founders": "Bernard Parah, Adeolu Akinyemi",
+    "image": "/images/2025/opay.png",
+    "gradient": {
+      "from": "purple-500",
+      "to": "purple-600"
+    },
+    "colors": {
+      "primary": "#9B0896",
+      "background": "#FEF5FD",
+      "text": "#9B0896"
+    }
+  },
+  {
+    "id": "ecoapp",
+    "name": "EcoApp",
+    "category": "products",
+    "tagline": "Sustainable living made simple",
+    "website": "#",
+    "description": "EcoApp provides smart environmental tracking tools that help individuals and businesses make sustainable choices for a better tomorrow.",
+    "status": "Active",
+    "industry": "Technology",
+    "founders": "Jane Doe, Mark Smith",
+    "image": "/images/2025/ecoapp.jpg",
+    "gradient": {
+      "from": "green-500",
+      "to": "green-600"
+    },
+    "colors": {
+      "primary": "#10B981",
+      "background": "#F0FDF4",
+      "text": "#10B981"
+    }
+  },
+  {
+    "id": "growthmetrics",
+    "name": "GrowthMetrics",
+    "category": "growth",
+    "tagline": "Data-driven business growth",
+    "website": "#",
+    "description": "GrowthMetrics provides comprehensive analytics and insights to help businesses scale effectively with data-driven decision making.",
+    "status": "Active",
+    "industry": "SaaS",
+    "founders": "David Chen, Sarah Williams",
+    "image": "/images/2025/analytics.jpg",
+    "displayText": "Analytics",
+    "gradient": {
+      "from": "orange-500",
+      "to": "orange-600"
+    },
+    "colors": {
+      "primary": "#F97316",
+      "background": "#FFF7ED",
+      "text": "#F97316"
+    }
+  },
+  {
+    "id": "scaleup",
+    "name": "ScaleUp",
+    "category": "growth",
+    "tagline": "Scale your startup faster",
+    "website": "#",
+    "description": "ScaleUp is a comprehensive platform designed to help startups and businesses scale efficiently with the right tools and resources.",
+    "status": "Active",
+    "industry": "Technology",
+    "founders": "Michael Johnson, Emily Brown",
+    "image": "/images/2025/scaleup.jpg",
+    "gradient": {
+      "from": "indigo-500",
+      "to": "indigo-600"
+    },
+    "colors": {
+      "primary": "#6366F1",
+      "background": "#EEF2FF",
+      "text": "#6366F1"
+    }
+  }
+]

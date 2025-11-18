@@ -1,0 +1,39 @@
+---
+import JoinCommunity from "@components/2024/JoinCommunity.astro";
+import FooterSection from "@components/2024/FooterSection.astro";
+import OgPropsHead from "@components/OgPropsHead.astro";
+
+export interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props as Props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta name="title" content={title} />
+    <meta
+      name="keywords"
+      content="DevFest, GDG Enugu, Google Developer Group Enugu, DevFest Enugu"
+    />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <OgPropsHead />
+    <title>{title}</title>
+  </head>
+
+  <body>
+    <main>
+      <slot />
+    </main>
+    <JoinCommunity />
+    <FooterSection />
+  </body>
+</html>

@@ -1,0 +1,134 @@
+---
+import Icon from "@components/Icon.astro";
+---
+
+<div
+  class="venue-container flex flex-col justify-center items-center gap-10 py-20 md:h-[800px] bg-white overflow-hidden"
+>
+  <!-- child container -->
+  <div
+    class="relative flex flex-col md:flex-row bg-black md:h-[584px] w-full max-w-[1600px]"
+  >
+    <!-- positioned circles -->
+    <div>
+      <!-- top left -->
+      <div
+        class="absolute rounded-full bg-white h-10 w-10 left-[-10px] top-[-10px]"
+      >
+      </div>
+      <!-- bottom left -->
+      <div
+        class="absolute rounded-full bg-white h-10 w-10 left-[-10px] bottom-[-10px]"
+      >
+      </div>
+      <!-- bottom mid -->
+      <div
+        class="absolute hidden md:flex rounded-full bg-white h-10 w-10 left-[-20px] md:left-[62.5%] top-[60.5%] md:top-[95%]"
+      >
+      </div>
+      <!-- bottom right -->
+      <div
+        class="absolute rounded-full bg-white h-10 w-10 right-[-10px] bottom-[-10px]"
+      >
+      </div>
+      <!-- top right -->
+      <div
+        class="absolute rounded-full bg-white h-10 w-10 right-[-10px] top-[-10px]"
+      >
+      </div>
+      <!-- top mid -->
+      <div
+        class="absolute hidden md:flex rounded-full bg-white h-10 w-10 right-[-20px] md:right-[35%] top-[60.5%] md:top-[-10px]"
+      >
+      </div>
+    </div>
+
+    <!-- first section -->
+    <div
+      class="flex flex-col justify-between items-center gap-10 md:gap-0 md:w-[65%] p-20 h-[100%]"
+    >
+      <div
+        class="item venue flex justify-center items-center h-10 w-[100px] px-20 py-7 rounded text-white"
+      >
+        &lt;&gt;<span>VENUE</span>&lt;/&gt;
+      </div>
+      <div>
+        <h2
+          class="item capitalize text-white text-center w-[350px] md:w-[703px] text-[40px] md:text-[56px]"
+        >
+          the base landmark, aguleri street, enugu
+        </h2>
+      </div>
+      <div
+        class="item date w-[350px] text-[12px] px-5 text-[#EA4335] flex justify-center items-center"
+      >
+        <p>&lt;date&gt;<span>10th - 12th December, 2025</span>&lt;/date&gt;</p>
+      </div>
+      <button
+        class="item font-google font-[500px] flex items-center gap-1 md:gap-3 justify-center rounded-full bg-white py-2 md:py-5 px-2 w-[100px] md:w-[200px] text-black text-[10px] md:text-[17px]"
+      >
+        <p>Register Now</p>
+        <Icon
+          class:list={"fill-black size-[10px] md:size-[20px]"}
+          icon="pixelated-right-arrow"
+        />
+      </button>
+    </div>
+
+    <!-- second section -->
+    <div class="flex flex-col md:flex-row md:w-[38%] gap-5 p-2 md:pl-2 h-full">
+      <img
+        src="/images/2025/venueLine.png"
+        alt=""
+        class="h-[1px] md:h-full pl-5 pr-5 md:p-0"
+      />
+      <img
+        src="/images/2025/venueX.png"
+        alt=""
+        class="absolute animate-tilt w-[30px] md:w-[45px] right-[5%] top-[10%]"
+      />
+      <div class="flex flex-col justify-end h-full">
+        <img
+          src="/images/2025/venuebg.png"
+          alt="an image of a building"
+          class="item w-[707px] h-[320px] pt-[60px]"
+        />
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .venue {
+      transform: rotate(7deg);
+      background-color: #ff7daf;
+    }
+
+    .date span {
+      color: white;
+    }
+    span {
+      color: black;
+    }
+  </style>
+
+  <script>
+    import { animate, stagger, inView } from "motion";
+
+    let hasAnimated = false;
+
+    inView(".venue-container", (element, _entry) => {
+      if (hasAnimated) return;
+
+      const items = (element as HTMLElement).querySelectorAll(".item");
+
+      animate(
+        items,
+        { opacity: [0, 1], y: [20, 0] },
+        { duration: 0.8, delay: stagger(0.25) }
+      );
+
+      hasAnimated = true;
+      return () => {};
+    });
+  </script>
+</div>

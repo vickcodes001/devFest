@@ -1,0 +1,132 @@
+[
+  {
+    "outlineColor": "#FAAB00",
+    "bgColor": "#FFF2CE",
+    "title": "attendee arivals",
+    "start": "09:00",
+    "end": "09:15",
+    "meridiem": "am"
+  },
+  {
+    "outlineColor": "#FAAB00",
+    "bgColor": "#FFF2CE",
+    "title": "registration and networking",
+    "start": "09:15",
+    "end": "10:30",
+    "meridiem": "am"
+  },
+  {
+    "outlineColor": "#FAAB00",
+    "bgColor": "#FFF2CE",
+    "title": "community event opening note",
+    "start": "10:30",
+    "end": "10:45",
+    "meridiem": "am",
+    "speaker": "Nwabude Obumneme"
+  },
+  {
+    "outlineColor": "#FAAB00",
+    "bgColor": "#FFF2CE",
+    "title": "interlude - jazz band performance",
+    "performers": "the makeshift band",
+    "start": "10:45",
+    "end": "11:15",
+    "meridiem": "am"
+  },
+  {
+    "outlineColor": "#4285f4",
+    "bgColor": "#c3ecf6",
+    "title": "keynote Speaker",
+    "speaker": "ugochukwu aronu",
+    "start": "11:20",
+    "end": "11:35",
+    "meridiem": "am"
+  },
+  {
+    "outlineColor": "#4285f4",
+    "bgColor": "#c3ecf6",
+    "title": "data-driven design: using analytics to inform product design and development",
+    "speaker": "ibeagha emmanuel",
+    "start": "11:40",
+    "end": "12:00",
+    "meridiem": "am"
+  },
+  {
+    "outlineColor": "#4285f4",
+    "bgColor": "#c3ecf6",
+    "title": "AI for sustainable agriculture: precision farming, weather forecasting & crop monitoring in enugu",
+    "speaker": "emmanuel boniface",
+    "start": "12:00",
+    "end": "12:20",
+    "meridiem": "pm"
+  },
+  {
+    "outlineColor": "#FAAB00",
+    "bgColor": "#FFF2CE",
+    "title": "community onboarding note & sponsors showcase",
+    "facilitator": "godson njoku & sponsor reps",
+    "start": "12:20",
+    "end": "01:00",
+    "meridiem": "pm"
+  },
+  {
+    "outlineColor": "#5CDB6D",
+    "bgColor": "#DEF8E1",
+    "title": "short break",
+    "start": "01:00",
+    "end": "01:10",
+    "meridiem": "pm"
+  },
+  {
+    "outlineColor": "#4285f4",
+    "bgColor": "#c3ecf6",
+    "title": "panel discussion - Talent Growth and Gap in South Eastern, Nigeria.",
+    "host": "raymond chuma-onwuoku",
+    "start": "01:10",
+    "end": "02:10",
+    "meridiem": "pm"
+  },
+  {
+    "outlineColor": "#4285f4",
+    "bgColor": "#c3ecf6",
+    "title": "building local first web apps",
+    "speaker": "iniubong obonguko",
+    "start": "02:10",
+    "end": "02:30",
+    "meridiem": "pm"
+  },
+  {
+    "outlineColor": "#FAAB00",
+    "bgColor": "#FFF2CE",
+    "title": "community builder showcase",
+    "facilitator": "godson njoku",
+    "start": "02:30",
+    "end": "03:15",
+    "meridiem": "pm"
+  },
+  {
+    "outlineColor": "#5CDB6D",
+    "bgColor": "#DEF8E1",
+    "title": "lunch break",
+    "start": "03:15",
+    "end": "03:30",
+    "meridiem": "pm"
+  },
+  {
+    "outlineColor": "#FAAB00",
+    "bgColor": "#FFF2CE",
+    "title": "closing remarks",
+    "facilitator": "daniel anomfueme",
+    "start": "03:30",
+    "end": "03:45",
+    "meridiem": "pm"
+  },
+  {
+    "outlineColor": "#5CDB6D",
+    "bgColor": "#DEF8E1",
+    "title": "event pictures and after-activities",
+    "start": "03:45",
+    "end": "--:--",
+    "meridiem": "pm"
+  }
+]

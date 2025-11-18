@@ -1,0 +1,4 @@
+User-agent: *
+
+# Sitemap location
+Sitemap: https://devfestenugu.com/sitemap-index.xml

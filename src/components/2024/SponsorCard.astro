@@ -1,0 +1,16 @@
+---
+const { logo, url, name, imgFit } = Astro.props;
+---
+
+<a
+  href={url}
+  aria-label=`Spponsor ${name}`
+  class="border rounded-[20px] h-28 lg:h-24 flex items-center justify-center p-8"
+>
+  <img
+    style=`object-fit: ${imgFit ? imgFit : 'contain'};`
+    class="w-full lg:w-[80%] h-20"
+    src={logo}
+    alt={name}
+  />
+</a>

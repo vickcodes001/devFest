@@ -1,0 +1,38 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import "@styles/global.css";
+import HeroSection from "@components/2025/HeroSection.astro";
+import ImageCarousel from "@components/2025/ImageCarousel.astro";
+import Venue from "@components/2025/Venue.astro";
+import Speakers from "@components/2025/Speakers.astro";
+import Sponsor from "@components/2025/Sponsor.astro";
+import ProductShowcase from "@components/2025/ProductShowcase.astro";
+import Partner from "@components/2025/Partner.astro";
+---
+
+<BaseLayout
+  title="Enugu Devfest 2025"
+  description="DevFest Enugu 2024 will take place on Saturday, December 7, 2024 at Hotel Sylvia, Independence Avenue, Enugu, 400102"
+>
+  <HeroSection />
+  <ImageCarousel />
+  <ProductShowcase />
+  <Venue />
+  <Speakers />
+  <Sponsor /> 
+  <Partner />
+</BaseLayout>
+
+<style>  :global(html) {
+    scroll-behavior: smooth;
+  }
+
+  /* :global(*) {
+    outline: 1px solid red;
+  } */
+  @media (prefers-reduced-motion: reduce) {
+    :global(html) {
+      scroll-behavior: auto;
+    }
+  }
+</style>

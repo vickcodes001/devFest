@@ -1,0 +1,28 @@
+---
+import SpeakerCard from "./SpeakerCard.astro";
+import speakers from "@data/2024/speakers.json";
+---
+
+<section id="speakers" class="h-full py-20 lg:py-32 bg-[#FFE6E6]">
+  <div class="px-8 container mx-auto">
+    <p class="uppercase font-medium text-center text-[#FAAB00] mb-4">speakers</p>
+
+    <div class="relative z-30 text-center w-full space-y-4 pb-10">
+      <h3
+        class="text-[#050505] font-bold text-4xl lg:text-[3.5rem] tracking-tighter leading-tight max-w-5xl w-full mx-auto capitalize"
+      >
+        meet our speakers
+      </h3>
+      <p class="text-[#474747] font-medium max-w-xl mx-auto">
+        Come listen to inspiring speakers who are shaping the future of tech
+        with their insights and innovative ideas.
+      </p>
+    </div>
+
+    <div
+      class="grid grid-cols-1 sm:grid-cols-center-2 xl:grid-cols-center-4 place-content-center place-items-center gap-x-4 gap-y-6"
+    >
+      {speakers.map((speaker) => <SpeakerCard {...speaker} />)}
+    </div>
+  </div>
+</section>

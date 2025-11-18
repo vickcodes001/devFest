@@ -1,0 +1,135 @@
+---
+import Icon from "@components/Icon.astro";
+
+const speakers = [
+  {
+    heading: "event speaker",
+    name: "Denzel Washi, CEO & Founder @Xend Finance",
+    image: "/images/2025/speaker1.jpg",
+    title: "the power of cloud computing",
+  },
+  {
+    heading: "event speaker",
+    name: "Denzel Washi, CEO & Founder @Xend Finance",
+    image: "/images/2025/speaker2.jpg",
+    title: "the power of cloud computing",
+  },
+  {
+    heading: "event speaker",
+    name: "Denzel Washi, CEO & Founder @Xend Finance",
+    image: "/images/2025/speaker3.jpg",
+    title: "the power of cloud computing",
+  },
+  {
+    heading: "event speaker",
+    name: "Denzel Washi, CEO & Founder @Xend Finance",
+    image: "/images/2025/speaker4.jpg",
+    title: "the power of cloud computing",
+  },
+  {
+    heading: "event speaker",
+    name: "Denzel Washi, CEO & Founder @Xend Finance",
+    image: "/images/2025/speaker5.png",
+    title: "the power of cloud computing",
+  },
+  {
+    heading: "event speaker",
+    name: "Denzel Washi, CEO & Founder @Xend Finance",
+    image: "/images/2025/speaker6.png",
+    title: "the power of cloud computing",
+  },
+  {
+    heading: "event speaker",
+    name: "Denzel Washi, CEO & Founder @Xend Finance",
+    image: "/images/2025/speaker7.png",
+    title: "the power of cloud computing",
+  },
+  {
+    heading: "event speaker",
+    name: "Denzel Washi, CEO & Founder @Xend Finance",
+    image: "/images/2025/speaker8.png",
+    title: "the power of cloud computing",
+  },
+];
+---
+
+<div
+  class="speaker-container flex flex-col justify-center items-center py-10 sm:py-20 bg-[#FFFCF3] text-black px-4 sm:px-6 md:px-8"
+>
+  <div
+    class="flex flex-col items-center gap-3 sm:gap-5 max-w-full sm:max-w-[600px] text-center"
+  >
+    <p
+      class="item text-[#FFB200] text-sm sm:text-[16px] uppercase tracking-wider"
+    >
+      {speakers[0].heading}
+    </p>
+    <h2
+      class="item capitalize text-2xl sm:text-3xl md:text-4xl lg:text-[50px] leading-tight"
+    >
+      meet our speakers
+    </h2>
+    <p
+      class="item text-black text-sm sm:text-base md:text-[18px] w-full sm:w-[300px] md:w-full"
+    >
+      Come listen to inspiring speakers who are shaping the future of tech with
+      their insights and innovative ideas.
+    </p>
+  </div>
+
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5 mt-10 sm:mt-20 max-w-full lg:max-w-[1600px] px-4 sm:px-0"
+  >
+    {
+      speakers.map((member) => (
+        <div class="item relative rounded-xl overflow-hidden bg-black text-white flex flex-col justify-end h-[350px] sm:h-[400px] md:h-[450px] w-full sm:w-[300px] md:w-[350px] lg:w-[380px] mx-auto">
+          <img
+            src={member.image}
+            alt={member.name}
+            class="absolute inset-0 top-[60px] sm:top-[70px] md:top-[80px] left-[-18px] sm:left-[-24px] md:left-[-36px] rounded-[15px] object-cover w-[calc(100%+36px)] sm:w-[calc(100%+48px)] md:w-[392px] h-[180px] sm:h-[200px] md:h-[230px]"
+          />
+          <div class="absolute top-2 sm:top-4 left-2 sm:left-4 bg-black bg-opacity-70 rounded-full py-1 px-2 sm:px-3 text-xs uppercase">
+            {member.heading}
+          </div>
+          <div class="relative z-10 p-3 sm:p-4 md:p-5">
+            <p class="text-xs opacity-70 mb-1">{member.name}</p>
+            <h3 class="font-bold uppercase text-sm sm:text-base md:text-[18px] leading-snug">
+              {member.title}
+            </h3>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <button
+    class="item mt-8 sm:mt-10 flex items-center gap-2 sm:gap-3 justify-center rounded-full bg-black px-4 sm:px-6 py-2 sm:py-3 text-white text-sm sm:text-base md:text-lg"
+  >
+    <span>Apply To Speak</span>
+    <Icon
+      class:list={"fill-white size-4 sm:size-5 md:size-6"}
+      icon="pixelated-right-arrow"
+    />
+  </button>
+</div>
+
+<script>
+  import { animate, stagger, inView } from "motion";
+
+  let hasAnimated = false;
+
+  inView(".speaker-container", (element, _entry) => {
+    if (hasAnimated) return;
+
+    const items = (element as HTMLElement).querySelectorAll(".item");
+
+    animate(
+      items,
+      { opacity: [0, 1], y: [20, 0] },
+      { duration: 0.8, delay: stagger(0.25) }
+    );
+
+    hasAnimated = true;
+    return () => {};
+  });
+</script>

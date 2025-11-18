@@ -1,0 +1,84 @@
+---
+import Icon from "@components/Icon.astro";
+---
+
+<header class="min-h-[60vh] pb-44 2xl:pt-20 h-full">
+  <div class="relative container mx-auto">
+    <div class="absolute flex w-full">
+      <Icon class="mx-auto" color="#57CAFFB2" icon="doodles/equality" />
+      <Icon
+        color="#EA4335"
+        class="ml-auto relative right-20 w-16 lg:w-20"
+        icon="doodles/plus"
+        fill-opacity="0.7"
+      />
+    </div>
+    <div
+      class="relative z-20 top-16 text-center flex items-center justify-end flex-col space-y-10"
+    >
+      <h1
+        class="font-bold text-6xl lg:text-9xl tracking-tighter text-[#050505]"
+      >
+        <span> Welcome to DevFest</span>
+        <span class="relative flex justify-center items-center">
+          Enugu 2024
+          <Icon class="ml-4 hidden lg:inline" icon="doodles/bracket" />
+        </span>
+      </h1>
+
+      <p class="text-[#474747] font-medium mt-10 max-w-xs lg:max-w-lg">
+        Join us for thrilling sessions, showcases, and networking opportunities
+        around the exciting world of technology.
+      </p>
+
+      <div class="flex gap-x-4 justify-center">
+        <a
+          target="_blank"
+          href="https://photos.app.goo.gl/VC1VjQyZLAKZMA127"
+          class="uppercase bg-[#050505] text-white hover:duration-300 transition-colors ease-in-out hover:bg-transparent hover:outline hover:outline-[#050505] hover:outline-1 hover:text-black rounded-[50px] p-4 w-44 h-auto inline-flex justify-center items-center text-center"
+          >See photos</a
+        >
+        <!-- <a
+          href="/dp-generator"
+          class="border border-[#050505] uppercase bg-transparent text-[#050505] hover:duration-300 transition-colors ease-in-out hover:bg-[#050505] hover:text-white rounded-[50px] p-4 w-44 h-auto inline-flex justify-center items-center text-center"
+          >Generate DP</a
+        > -->
+      </div>
+    </div>
+
+    <div class="absolute z-0 top-72 w-full flex">
+      <Icon
+        class="relative bottom-14 w-20 lg:w-44 left-10 -rotate-12"
+        icon="doodles/triplecircle"
+      />
+      <Icon
+        class="ml-auto relative lg:right-40 lg:top-20 top-24 w-20 lg:w-40"
+        icon="doodles/semicircle"
+        fill-opacity="0.7"
+      />
+    </div>
+  </div>
+</header>
+
+<div
+  class="flex flex-col lg:flex-row justify-center lg:justify-evenly items-center bg-[#050505] text-white py-12 gap-y-10 h-fit lg:h-24"
+>
+  <div
+    class="flex flex-col lg:flex-row gap-y-4 items-center justify-center gap-x-2"
+  >
+    <Icon icon="calendar" />
+    <p>Saturday, December 7, 2024</p>
+  </div>
+  <div
+    class="flex flex-col lg:flex-row gap-y-4 items-center justify-center gap-x-2 max-w-[200px] lg:max-w-full text-center lg:text-left"
+  >
+    <Icon icon="location-marker" />
+    <p>Hotel Sylvia, Independence Avenue, Enugu, 400102</p>
+  </div>
+  <div
+    class="flex flex-col lg:flex-row gap-y-4 items-center justify-center gap-x-2"
+  >
+    <Icon icon="time" />
+    <p>09:00 AM – 4:45 PM (GMT+1)</p>
+  </div>
+</div>

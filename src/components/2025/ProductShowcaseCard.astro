@@ -1,0 +1,63 @@
+---
+export interface ProductProps {
+  id: string;
+  name: string;
+  category: string;
+  website: string;
+  description: string;
+  image?: string;
+  displayText?: string;
+  gradient: {
+    from: string;
+    to: string;
+  };
+  colors: {
+    primary: string;
+    background: string;
+    hover: string;
+  };
+}
+
+interface Props {
+  product: ProductProps;
+}
+
+const { product } = Astro.props;
+---
+
+<div 
+  class={`product-item bg-gradient-to-br ${product.colors.background} rounded-2xl p-8 group hover:shadow-lg transition-all duration-300`} 
+  data-category={product.category}
+>
+  <div class="flex items-center justify-between mb-6">
+    <h3 class={`text-2xl font-bold text-${product.colors.primary}`}>
+      {product.name}
+    </h3>
+    <a 
+      href={product.website} 
+      target="_blank" 
+      class={`text-sm text-gray-600 hover:text-${product.colors.hover} transition-colors`}
+    >
+      Visit Website →
+    </a>
+  </div>
+  
+  <div class={`relative h-48 bg-gradient-to-r from-${product.gradient.from} to-${product.gradient.to} rounded-xl overflow-hidden`}>
+    {product.image ? (
+      <img 
+        src={product.image} 
+        alt={product.name} 
+        class="w-full h-full object-cover"
+      />
+    ) : null}
+    <div class="absolute inset-0 flex items-center justify-center">
+      <span class="text-4xl font-bold text-white">
+        {product.displayText || product.name}
+      </span>
+    </div>
+  </div>
+  
+  <p class="mt-4 text-gray-600 text-sm">
+    {product.description}
+  </p>
+</div>

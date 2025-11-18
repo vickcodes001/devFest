@@ -1,0 +1,84 @@
+---
+import NavBar from "@components/2024/NavBar.astro";
+import ScheduleCard, {
+  type Schedule,
+} from "@components/2024/ScheduleCard.astro";
+import Icon from "@components/Icon.astro";
+import scheduleData from "@data/2024/event-schedule.json";
+
+import "@styles/global.css";
+import BaseLayout from "@layouts/2024/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Schedule of Events | Enugu Devfest 2024"
+  description="This page contains the Schedule of events for Enugu DevFest 2024 happening on Saturday, December 7, 2024 at Hotel Sylvia, Independence Avenue, Enugu, 400102"
+>
+  <div class="bg-[#DEF8E1]">
+    <NavBar />
+    <header class="min-h-[50vh] h-full py-24">
+      <div class="container mx-auto">
+        <div
+          class="text-center flex items-center justify-end flex-col space-y-10 px-4 relative z-20"
+        >
+          <h1
+            class="capitalize font-bold text-6xl lg:text-8xl tracking-tighter text-[#050505]"
+          >
+            event schedule
+          </h1>
+          <p class="text-[#474747] mt-10 max-w-xl">
+            Join us for thrilling sessions, workshops, and networking
+            opportunities around the exciting world of technology.
+          </p>
+        </div>
+        <div class="relative bottom-20">
+          <Icon
+            icon="doodles/equality"
+            class="absolute top-20 -right-20 -rotate-45 left-48"
+            color="#57CAFF"
+            width={60}
+            height={90}
+          />
+          <Icon
+            icon="doodles/plus"
+            class="absolute -top-44 lg:right-32 ml-auto rotate-12"
+            color="#FF7DAF"
+            width={90}
+            height={120}
+          />
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <section class="bg-white min-h-screen h-auto px-4 lg:px-20 py-20">
+    <div class="container mx-auto">
+      <p class="mb-3 uppercase font-medium text-center text-[#FAAB00]">
+        innovate, learn, connect.
+      </p>
+
+      <div class="text-center w-full pb-10 lg:pb-16">
+        <h2
+          class="text-[#050505] tracking-tighter leading-tight font-bold text-4xl lg:text-[3.5rem] max-w-5xl w-full mx-auto capitalize"
+        >
+          Here’s what we’ve got in store for you at Enugu DevFest 2024
+        </h2>
+      </div>
+
+      <div
+        class="py-6 px-6 md:px-8 h-auto flex flex-col md:flex-row space-x-2 text-lg md:items-center justify-start w-full bg-[#DEF8E1] rounded-[20px] mb-4 p-4"
+      >
+        <strong class="text-2xl">Event Hosts:</strong>
+        <div class="flex flex-col md:flex-row gap-x-2 gap-y-0.5 mt-0.5 text-lg">
+          <p class="inline-flex">Precious Onyewuchi</p>
+          <span class="hidden md:inline-flex"> &amp;</span>
+          <p>Ifedili "Sauce Codee" Onyegbu</p>
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        {scheduleData.map((data) => <ScheduleCard {...data} />)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,94 @@
+---
+import Carousel from "./Carousel.astro";
+
+const imageList = [
+  {
+    image: "/images/2025/carouselImg4.jpg",
+  },
+  {
+    image: "/images/2025/carouselImg2.png",
+  },
+  {
+    image: "/images/2025/carouselImg5.jpg",
+  },
+  {
+    image: "/images/2025/carouselImg3.png",
+  },
+  {
+    image: "/images/2025/carouselImg6.jpg",
+  },
+  {
+    image: "/images/2025/carouselImg1.png",
+  },
+  {
+    image: "/images/2025/carouselImg7.jpg",
+  },
+];
+---
+
+<section class="carousel-container h-full py-10 sm:py-20 lg:py-36 bg-white">
+  <div class="container mx-auto mb-5 sm:mb-10 px-4 sm:px-6 md:px-8">
+    <p
+      class="item uppercase items-center text-xs sm:text-sm md:text-[12px] lg:text-[24px] font-medium text-center text-[#FAAB00] mb-3 sm:mb-4"
+    >
+      highlights from our past devfest
+    </p>
+
+    <div class="relative z-30 text-center w-full space-y-3 sm:space-y-4">
+      <h3
+        class="item text-[#050505] font-bold text-2xl sm:text-3xl md:text-4xl lg:text-[55px] tracking-tighter leading-tight max-w-full sm:max-w-[600px] w-full mx-auto capitalize"
+      >
+        Throwback to DevFest Enugu '24
+      </h3>
+    </div>
+  </div>
+
+  <!-- Marquee Section -->
+  <Carousel imageList={imageList} />
+</section>
+
+<style>
+  /* Marquee Animation */
+  .marquee {
+    animation: scroll 20s linear alternate-reverse infinite;
+  }
+
+  @keyframes scroll {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Hide Scrollbar */
+  .overflow-hidden::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+  }
+
+  .overflow-hidden {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+</style>
+<script>
+  import { animate, stagger, inView } from "motion";
+
+  let hasAnimated = false;
+
+  inView(".carousel-container", (element, _entry) => {
+    if (hasAnimated) return;
+
+    const items = (element as HTMLElement).querySelectorAll(".item");
+
+    animate(
+      items,
+      { opacity: [0, 1], y: [20, 0] },
+      { duration: 0.8, delay: stagger(0.25) }
+    );
+
+    hasAnimated = true;
+    return () => {};
+  });
+</script>

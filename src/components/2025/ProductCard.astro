@@ -1,0 +1,72 @@
+---
+const productList = [
+  {
+    productName: "Cola",
+    link: "https://cocacola.com",
+    img: "/images/2025/cola.jpg",
+    colorClass: "text-[#FB2C47] bg-[#FFF0EF]",
+  },
+  {
+    productName: "Costa",
+    link: "https://costa.com",
+    img: "/images/2025/costa.jpg",
+    colorClass: "text-[#00405E] bg-white",
+  },
+  {
+    productName: "Opay",
+    link: "https://opayweb.com",
+    // img: "/images/2025/opay.png",
+    colorClass: "text-[#9B0896] bg-[#FFECF5]",
+  },
+];
+---
+
+<div class="card grid md:grid-cols-3">
+  {
+    productList.map((item) => (
+      <div
+        class={`item p-6 h-[350px] shadow-sm flex flex-col border gap-4 ${item.colorClass}`}
+      >
+        <div class="flex items-center justify-between">
+          <h2 class={`font-semibold text-[32px] ${item.colorClass}`}>
+            {item.productName}
+          </h2>
+
+          <a
+            href={item.link}
+            target="_blank"
+            class="text-sm flex items-center gap-1 hover:underline text-black"
+          >
+            Visit Website →
+          </a>
+        </div>
+
+        <div class="relative w-full max-w-[473px] h-[226px] bg-gradient-to-r from-[#501616] to-[#9B0896] rounded-[100px] overflow-hidden">
+          <img src={item.img} alt="" class="w-full h-full object-cover" />
+          <p class="absolute inset-0 flex items-center justify-center text-[60px] font-bold text-white">
+            {item.productName}
+          </p>
+        </div>
+      </div>
+    ))
+  }
+</div>
+
+<script>
+  import { animate, stagger, inView } from "motion";
+
+  let hasAnimated = false;
+
+  inView(".card", (element) => {
+    if (hasAnimated) return;
+    hasAnimated = true;
+
+    const items = element.querySelectorAll(".item");
+
+    animate(
+      items,
+      { opacity: [0, 1], y: [20, 0] },
+      { duration: 0.8, delay: stagger(0.7) }
+    );
+  });
+</script>

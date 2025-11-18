@@ -1,0 +1,82 @@
+---
+import Icon from "@components/Icon.astro";
+
+export interface Schedule {
+  title: string;
+  bgColor: string;
+  outlineColor: string;
+  start: string;
+  end: string;
+  meridiem: string;
+  facilitator?: string;
+  host?: string;
+  performers?: string;
+  speaker?: string;
+}
+
+const {
+  title,
+  bgColor,
+  outlineColor,
+  start,
+  end,
+  meridiem,
+  facilitator,
+  host,
+  speaker,
+  performers,
+} = Astro.props as Schedule;
+---
+
+<div class="card-container px-6 py-8 lg:p-10 rounded-3xl space-y-6">
+  <div
+    class="date-pill border-2 w-fit py-3 px-6 rounded-full h-auto flex items-center gap-x-4"
+  >
+    <Icon icon="time-solid" color={outlineColor} />
+    <p class="uppercase">
+      {start} - {end}
+      {meridiem}
+    </p>
+  </div>
+  <div>
+    <h3 class="font-bold text-2xl lg:text-3xl capitalize max-w-3xl">{title}</h3>
+    {
+      (speaker?.length ||
+        facilitator?.length ||
+        performers?.length ||
+        host?.length) && (
+        <div class="mt-4">
+          {speaker?.length ? (
+            <p class="capitalize">
+              <span class="uppercase font-bold">Speaker:</span> {speaker}
+            </p>
+          ) : facilitator?.length ? (
+            <p class="capitalize">
+              <span class="uppercase font-bold">Facilitator:</span>{" "}
+              {facilitator}
+            </p>
+          ) : performers?.length ? (
+            <p class="capitalize">
+              <span class="uppercase font-bold">Performers:</span> {performers}
+            </p>
+          ) : host?.length ? (
+            <p class="capitalize">
+              <span class="uppercase font-bold">Host:</span> {host}
+            </p>
+          ) : null}
+        </div>
+      )
+    }
+  </div>
+</div>
+
+<style define:vars={{ outlineColor, bgColor }}>
+  .date-pill {
+    border-color: var(--outlineColor);
+    color: var(--outlineColor);
+  }
+
+  .card-container {
+    background-color: var(--bgColor);
+  }
+</style>

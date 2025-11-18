@@ -1,0 +1,100 @@
+---
+import Icon from "@components/Icon.astro";
+---
+
+<div
+  class="hero-container relative h-[90vh] flex flex-col justify-center items-center"
+>
+  <!-- header content -->
+  <div
+    class="flex flex-col justify-center items-center gap-2 md:gap-5 text-white px-5 py-5"
+  >
+    <p
+      class="item flex items-center text-[16px] md:text-[24px] gap-1 md:gap-2 text-[#FFB200]"
+    >
+      #DEVFESTENUGU2025 <span class="rotate-[7deg] w-[10px] md:w-[22px]"
+        ><img src="/images/2025/heroBracket.png" alt="" /></span
+      >
+    </p>
+    <!-- header -->
+    <div
+      class="item headerText font-bold text-[40px] md:text-[90px] w-full max-w-[1100px] text-center"
+    >
+      Welcome Back To Devfest Enugu 2025
+    </div>
+    <!--  -->
+    <p
+      class="item md:text-[22px] text-[gray] font-google font-normal w-full max-w-[700px] text-center tracking-[1px]"
+    >
+      Join us for thrilling sessions, showcases, and networking opportunities
+      around the exciting world of technology.
+    </p>
+    <button
+      class="item font-google font-[500px] flex items-center gap-1 md:gap-3 justify-center rounded-full bg-white mt-10 py-2 md:py-5 px-2 w-[100px] md:w-[200px] text-black text-[10px] md:text-[17px]"
+    >
+      <p>Register Now</p>
+      <Icon class:list={"fill-black size-[10px] md:size-[20px]"} icon="pixelated-right-arrow" />
+    </button>
+  </div>
+
+  <!-- floating images -->
+  <div>
+    <div
+      class="animate-smoothBounce absolute top-[20%] left-[13%] w-[40px] md:w-[80px]"
+      style="animation-delay: 0s;"
+    >
+      <img src="/images/2025/heroWifi.png" alt="" />
+    </div>
+    <div
+      class="animate-smoothBounce absolute top-[20%] right-[18%] w-[40px] md:w-[80px]"
+      style="animation-delay: 1s;"
+    >
+      <img src="/images/2025/logoLarge.png" alt="" class="w-[100px]" />
+    </div>
+    <div
+      class="animate-smoothBounce absolute bottom-[23%] md:bottom-[25%] left-[22%] w-[40px] md:w-[80px]"
+      style="animation-delay: 2s;"
+    >
+      <img src="/images/2025/heroPink.png" alt="" />
+    </div>
+    <div
+      class="animate-smoothBounce absolute bottom-[26%] md:bottom-[25%] right-[21%] w-[40px] md:w-[80px]"
+      style="animation-delay: 3s;"
+    >
+      <img src="/images/2025/heroBinary.png" alt="" />
+    </div>
+  </div>
+
+  <style>
+    .hero-container {
+      background-image: url("/images/2025/heroLine.png");
+      background-color: #00000d;
+      background-position: center;
+    }
+
+    .header-text {
+      line-height: 100px;
+    }
+  </style>
+
+  <script>
+    import { animate, stagger, inView } from "motion";
+
+    let hasAnimated = false;
+
+    inView(".hero-container", (element, _entry) => {
+      if (hasAnimated) return;
+      
+      const items = (element as HTMLElement).querySelectorAll(".item");
+
+      animate(
+        items,
+        { opacity: [0, 1], y: [20, 0] },
+        { duration: 0.8, delay: stagger(0.25) }
+      );
+
+      hasAnimated = true;
+      return () => {};
+    });
+  </script>
+</div>

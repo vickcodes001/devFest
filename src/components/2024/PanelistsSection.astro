@@ -1,0 +1,30 @@
+---
+import SpeakerCard from "./SpeakerCard.astro";
+import panelists from "@data/2024/panelists.json";
+---
+
+<section id="speakers" class="h-full py-20 lg:py-32 bg-[#FFF4D6]">
+  <div class="px-8 container mx-auto">
+    <p class="uppercase font-medium text-center text-[#FAAB00] mb-4">
+      our panelists
+    </p>
+
+    <div class="relative z-30 text-center w-full space-y-4 pb-10">
+      <h3
+        class="text-[#050505] font-bold text-4xl lg:text-[3.5rem] tracking-tighter leading-tight max-w-4xl w-full mx-auto capitalize"
+      >
+        panel session: Talent Growth and Gap in South Eastern, Nigeria.
+      </h3>
+      <p class="text-[#474747] font-medium max-w-xl mx-auto">
+        Join us for a panel on talent growth and the skills gap in South Eastern
+        Nigeria, exploring challenges and strategies for development.
+      </p>
+    </div>
+
+    <div
+      class="grid grid-cols-1 sm:grid-cols-center-2 lg:grid-cols-center-3 place-items-center gap-x-4 gap-y-6 lg:px-20 xl:px-44"
+    >
+      {panelists.map((panelist) => <SpeakerCard {...panelist} />)}
+    </div>
+  </div>
+</section>

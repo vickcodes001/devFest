@@ -1,0 +1,267 @@
+---
+import NavBar from "@components/2024/NavBar.astro";
+import Icon from "@components/Icon.astro";
+import ImageUpload from "@components/ImageUpload.astro";
+import DPTemplate from "@components/DPTemplate.astro";
+import BaseLayout from "@layouts/2024/BaseLayout.astro";
+
+import "@styles/global.css";
+
+let name = "";
+let photo = "";
+---
+
+<BaseLayout
+  title="DP Generator | Enugu Devfest 2024"
+  description="Generate your DP for DevFest Enugu 2024, telling the world you're going to be there!"
+>
+  <div class="relative bg-[#FFF4D6]">
+    <NavBar />
+    <header class="min-h-[50vh] h-full py-24">
+      <div class="container mx-auto">
+        <div
+          class="text-center flex items-center justify-end flex-col space-y-10 px-4 relative z-20"
+        >
+          <h1
+            class="capitalize font-bold text-6xl lg:text-8xl tracking-tighter text-[#050505]"
+          >
+            DP Generator
+          </h1>
+          <p class="text-[#474747] mt-10 max-w-xs">
+            Spread the Word, Lets everyone know you will be THERE!!
+          </p>
+        </div>
+        <div class="relative bottom-20">
+          <Icon
+            icon="doodles/bent-doublecircle"
+            class="absolute top-20 -right-20 -rotate-45 left-48"
+            color="#57CAFF"
+            width={90}
+            height={90}
+          />
+          <Icon
+            icon="doodles/bracket"
+            class="absolute -top-44 lg:right-32 ml-auto rotate-12"
+            color="#FF7DAF"
+            width={120}
+            height={120}
+          />
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <section class="pb-32 pt-20 min-h-[50vh] h-full">
+    <div
+      class="form container mx-auto px-4 flex flex-col md:flex-row gap-y-10 gap-x-20 justify-center items-center"
+    >
+      <form id="form" class="space-y-10 max-w-md w-full">
+        <h2 class="text-2xl">Input Your Information</h2>
+
+        <div class="w-full">
+          <label for="name-input" class="block text-sm font-medium mb-2"
+            >Name*</label
+          >
+          <input
+            required
+            type="text"
+            id="name-input"
+            class="text-base py-3 px-4 block w-full border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none"
+            placeholder="Enter name or nickname"
+          />
+        </div>
+
+        <div class="w-full">
+          <label for="quote-input" class="block text-sm font-medium mb-2"
+            >Quote</label
+          >
+          <input
+            maxlength="30"
+            type="text"
+            id="quote-input"
+            class="text-base py-3 px-4 block w-full border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none"
+            placeholder="Oh mehn, I'm active!"
+          />
+          <p id="quote-count" class="text-sm text-gray-500 mt-1">0/30</p>
+        </div>
+
+        <div>
+          <label for="input-label" class="block text-sm font-medium mb-2"
+            >Photo*</label
+          >
+          <ImageUpload />
+        </div>
+
+        <div class="color-selection">
+          <div class="flex gap-x-6">
+            <div class="flex">
+              <input
+                type="radio"
+                name="hs-radio-group"
+                value="#FFE6E6"
+                class="shrink-0 mt-0.5 border-gray-200 rounded-full text-[#F1ADB0] focus:ring-[#F1ADB0] disabled:opacity-50 disabled:pointer-events-none"
+                id="hs-radio-group-3"
+              />
+              <label for="hs-radio-group-3" class="text-sm text-gray-500 ms-2"
+                >Red</label
+              >
+            </div>
+
+            <div class="flex">
+              <input
+                type="radio"
+                name="hs-radio-group"
+                value="#EEFFEF"
+                class="shrink-0 mt-0.5 border-gray-200 rounded-full text-[#B1F5B6] focus:ring-[#B1F5B6] disabled:opacity-50 disabled:pointer-events-none"
+                id="hs-radio-group-2"
+              />
+              <label for="hs-radio-group-2" class="text-sm text-gray-500 ms-2"
+                >Green</label
+              >
+            </div>
+
+            <div class="flex">
+              <input
+                type="radio"
+                name="hs-radio-group"
+                value="#E4FAFF"
+                class="shrink-0 mt-0.5 border-gray-200 rounded-full text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none"
+                id="hs-radio-group-1"
+                checked
+              />
+              <label for="hs-radio-group-1" class="text-sm text-gray-500 ms-2"
+                >Blue</label
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full">
+          <button
+            id="generate-dp"
+            type="submit"
+            class="w-full bg-[#050505] text-white uppercase hover:duration-300 transition-colors ease-in-out hover:bg-transparent hover:outline hover:border-[#050505] hover:outline-1 hover:text-black rounded-[50px] p-4 inline-flex justify-center items-center text-center"
+          >
+            Generate & Download
+          </button>
+        </div>
+      </form>
+
+      <div>
+        <img
+          width="500"
+          height="400"
+          src="/images/dp-generator-sample.webp"
+          alt="DP generator sample"
+        />
+      </div>
+
+      <!-- Preview side - Hide it but keep it rendered -->
+      <div class="fixed -left-[-3000px]">
+        <DPTemplate name={name} photo={photo} />
+      </div>
+    </div>
+  </section>
+
+  <script>
+    import { toPng } from "html-to-image";
+
+    // Get DOM elements
+    const nameInput = document.getElementById("name-input");
+    const quoteInput = document.getElementById("quote-input");
+    const quoteCount = document.getElementById(
+      "quote-count"
+    ) as HTMLParagraphElement;
+
+    const previewElement = document.getElementById(
+      "dp-container"
+    ) as HTMLElement;
+    const colorInputs = document.querySelectorAll(
+      'input[name="hs-radio-group"]'
+    );
+    const formElement = document.getElementById("form");
+    const noImageErrorElement = document.getElementById("no-image-error");
+
+    // Track the uploaded image and selected color
+    let uploadedImage = "";
+    let selectedColor = "#E4FAFF"; // Default blue color
+
+    // Handle color selection
+    colorInputs.forEach((input) => {
+      input.addEventListener("change", (e) => {
+        selectedColor = (e.target as HTMLInputElement).value;
+        const templateContainer = document.getElementById("dp-container-child");
+        if (templateContainer) {
+          templateContainer.style.backgroundColor = selectedColor;
+        }
+      });
+    });
+
+    // Update preview when name changes
+    nameInput?.addEventListener("input", (e) => {
+      const nameElements = document.querySelectorAll("[data-name]");
+      nameElements.forEach((element) => {
+        element.textContent = (e.target as HTMLInputElement).value;
+      });
+    });
+
+    quoteInput?.addEventListener("input", (e) => {
+      const quoteElements = document.querySelectorAll("[data-quote]");
+      quoteElements.forEach((element) => {
+        element.textContent = (e.target as HTMLInputElement).value;
+        quoteCount.textContent = `${element.textContent.length}/30`;
+      });
+    });
+
+    // Generate and download image
+    formElement?.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      // Reset error state
+      noImageErrorElement?.classList.add("hidden");
+
+      // Add validation check for image
+      if (!uploadedImage) {
+        noImageErrorElement?.classList.remove("hidden");
+        return;
+      }
+
+      try {
+        // Add a small delay to ensure all assets are loaded
+        await new Promise((resolve) => setTimeout(resolve, 500));
+
+        const dataUrl = await toPng(previewElement, {
+          quality: 1.0,
+          pixelRatio: 1, // Ensure 1:1 pixel ratio
+          skipAutoScale: true, // Prevent automatic scaling
+          style: {
+            transform: "scale(1)", // Ensure no scaling is applied
+            transformOrigin: "top left",
+            background: "white",
+          },
+          cacheBust: true, // Prevent caching issues
+        });
+
+        // Create download link
+        const link = document.createElement("a");
+        link.download = `enugu-devfest-dp.png`;
+        link.href = dataUrl;
+        link.click();
+      } catch (error) {
+        console.error("Error generating image:", error);
+      }
+    });
+
+    // Listen for the custom event to update the photo variable
+    document.addEventListener("imageUploaded", (event: any) => {
+      uploadedImage = event.detail.photo; // Update the photo variable
+
+      const photoElement = document.querySelector(
+        "[data-photo]"
+      ) as HTMLImageElement;
+      if (photoElement) {
+        photoElement.src = uploadedImage;
+      }
+    });
+  </script>
+</BaseLayout>

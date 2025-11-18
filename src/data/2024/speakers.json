@@ -1,0 +1,67 @@
+[
+  {
+    "name": "Obumneme Nwabude",
+    "title": "GDE Flutter & Dart",
+    "linkedin": "https://www.linkedin.com/in/obumnwabude/",
+    "x": "https://x.com/obumnwabude",
+    "image": "https://res.cloudinary.com/dpectrfhh/image/upload/c_fill,w_400,h_400,q_auto/v1732833696/obum_padded_smiling_sdmmto.webp",
+    "session": "opening note"
+  },
+  {
+    "name": "ugochukwu aronu",
+    "title": "CEO & Founder @ Xend Finance",
+    "linkedin": "https://www.linkedin.com/in/ugochukwu-aronu-4477a59b/",
+    "x": "https://x.com/AronuUgochukwu",
+    "image": "https://res.cloudinary.com/dpectrfhh/image/upload/c_fill,w_400,h_400,q_auto/v1733087007/ugochukwu_aronu_wnffqv.webp",
+    "session": "keynote speaker"
+  },
+  {
+    "name": "ibeagha emmanuel",
+    "title": "software developer @ TT consulting services",
+    "linkedin": "https://www.linkedin.com/in/bethel1889/",
+    "x": "https://x.com/bethel1889",
+    "image": "https://res.cloudinary.com/dpectrfhh/image/upload/c_fill,w_400,h_400,q_auto/v1732832447/Ibeagha_Emmanuel_pgbxc6.webp",
+    "session": "Event Speaker"
+  },
+  {
+    "name": "emmanuel boniface",
+    "title": "ML research engineer @ university of nigeria",
+    "linkedin": "https://www.linkedin.com/in/emmanuel-boniface/",
+    "x": "https://x.com/BonifaceChosen",
+    "image": "https://res.cloudinary.com/dpectrfhh/image/upload/c_fill,w_400,h_400,q_auto/v1732832446/Emmanuel_Boniface_memk1v.webp",
+    "session": "Event Speaker"
+  },
+
+  {
+    "name": "iniubong obonguko",
+    "title": "software engineer & technical writer",
+    "linkedin": "https://www.linkedin.com/in/iniubongobonguko/",
+    "x": "https://x.com/codiini",
+    "image": "https://res.cloudinary.com/dpectrfhh/image/upload/c_fill,w_400,h_400,q_auto/v1732832447/Iniubong_Obonguko_fu28j0.webp",
+    "session": "Event Speaker"
+  },
+  {
+    "name": "mahmood loke",
+    "title": "CMO @ D creative hub",
+    "linkedin": "",
+    "x": "",
+    "image": "https://res.cloudinary.com/dpectrfhh/image/upload/c_fill,w_400,h_400,q_auto/v1732832447/mahmood-abdullahi-loke_gyocqj.webp",
+    "session": "Extended playlist speaker"
+  },
+  {
+    "name": "kalu emeka",
+    "title": "3d environmental artist @ blender stories",
+    "linkedin": "",
+    "x": "https://x.com/Chukwuemeka_Kay",
+    "image": "https://res.cloudinary.com/dpectrfhh/image/upload/c_fill,w_400,h_400,q_auto/v1732832446/Kalu_Emeka_fnns4b.webp",
+    "session": "Extended playlist speaker"
+  },
+  {
+    "name": "Shamsudeen Adedokun",
+    "title": "senior mobile developer",
+    "linkedin": "",
+    "x": "https://x.com/_shams_ad",
+    "image": "https://res.cloudinary.com/dpectrfhh/image/upload/c_fill,w_400,h_400,q_auto/v1732832447/Shamsudeen_Adedokun_csxhzj.webp",
+    "session": "Extended playlist speaker"
+  }
+]

@@ -1,0 +1,121 @@
+---
+import Icon from '@components/Icon.astro';
+
+export interface ProductProps {
+  id: string;
+  name: string;
+  category: string;
+  tagline: string;
+  website: string;
+  description: string;
+  status: string;
+  industry: string;
+  founders: string;
+  image?: string;
+  displayText?: string;
+  gradient: {
+    from: string;
+    to: string;
+  };
+  colors: {
+    primary: string;
+    background: string;
+    text: string;
+  };
+}
+
+interface Props {
+  product: ProductProps;
+}
+
+const { product } = Astro.props;
+---
+
+<div 
+  class="product-item accordion-item bg-white border border-gray-200 rounded-xl lg:rounded-2xl overflow-hidden transition-all duration-300"
+  data-category={product.category}
+  data-product-id={product.id}
+>
+  <!-- Accordion Header (Closed State) -->
+  <button
+    class="accordion-header w-full px-4 py-4 lg:px-10 lg:py-8 grid grid-cols-[1fr_auto] lg:grid-cols-[300px_1fr_auto] items-center gap-3 lg:gap-8 hover:bg-gray-50/50 transition-colors"
+    aria-expanded="false"
+  >
+    <h3 class="text-xl lg:text-3xl text-left font-bold" style={`color: ${product.colors.text}`}>
+      {product.name}
+    </h3>
+    
+    <span class="hidden lg:block text-gray-600 text-lg font-normal text-left lg:pl-32">
+      {product.tagline}
+    </span>
+    
+    <div 
+      class="w-10 h-10 lg:w-12 lg:h-12 rounded-full border-2 border-gray-900 flex items-center justify-center hover:bg-gray-100 transition-all flex-shrink-0 accordion-icon-container cursor-pointer"
+      aria-label="Toggle accordion"
+    >
+      <span class="accordion-icon transition-transform duration-300 rotate-90 inline-block">
+        <Icon icon="pixelated-right-arrow" class:list={"fill-black"} />
+      </span>
+    </div>
+  </button>
+
+  <!-- Accordion Content (Expanded State) -->
+  <div class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+    <div class="px-4 lg:px-10 pb-6 lg:pb-10 pt-2 border-t border-gray-100">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr,auto] gap-6 lg:gap-12">
+        <!-- Left Column: Details -->
+        <div class="space-y-4 lg:space-y-6">
+          <div class="flex flex-col sm:flex-row items-start sm:items-center sm:justify-between gap-3">
+            <a 
+              href={product.website} 
+              target="_blank"
+              class="inline-flex items-center gap-2 px-5 py-2.5 lg:px-6 lg:py-3 bg-gray-100 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors text-gray-900"
+            >
+              Visit Website
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Mobile Tagline -->
+          <p class="lg:hidden text-gray-600 text-base font-normal">
+            {product.tagline}
+          </p>
+
+          <p class="text-gray-700 leading-relaxed text-sm lg:text-base max-w-2xl">
+            {product.description}
+          </p>
+
+          <!-- Product Metadata -->
+          <div class="grid grid-cols-2 sm:flex gap-6 sm:gap-8 lg:gap-16 pt-4 lg:pt-6">
+            <div>
+              <h4 class="text-sm lg:text-base font-bold text-gray-900 mb-1 lg:mb-2">Status</h4>
+              <p class="text-gray-700 text-sm lg:text-base">{product.status}</p>
+            </div>
+            <div>
+              <h4 class="text-sm lg:text-base font-bold text-gray-900 mb-1 lg:mb-2">Industry</h4>
+              <p class="text-gray-700 text-sm lg:text-base">{product.industry}</p>
+            </div>
+            <div class="col-span-2 sm:col-span-1">
+              <h4 class="text-sm lg:text-base font-bold text-gray-900 mb-1 lg:mb-2">Founders</h4>
+              <p class="text-gray-700 text-sm lg:text-base">{product.founders}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Visual -->
+        <div class="flex items-center justify-center mt-4 lg:mt-0">
+          <div 
+            class="w-full max-w-[600px] h-[250px] lg:w-[600px] lg:h-[350px] rounded-2xl lg:rounded-3xl flex items-center justify-center relative overflow-hidden"
+            style={`background: linear-gradient(135deg, ${product.colors.primary} 0%, ${product.colors.primary}ee 100%)`}
+          >
+            <span class="relative z-10 text-4xl lg:text-6xl font-bold text-white">
+              {product.displayText || product.name}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,97 @@
+---
+import Icon from "@components/Icon.astro";
+const imageStyling =
+  "img-container flex items-center justify-center py-[20px] sm:py-[25px] md:py-[30px] bg-white w-full md:w-[388px] lg:w-[522px]";
+---
+
+<div
+  class="partner-container flex flex-col gap-5 sm:gap-10 md:gap-[45px] justify-center items-center p-5 sm:p-10 md:p-20 bg-[#00000D]"
+>
+  <!-- first session -->
+  <div class="flex flex-col items-center gap-3 sm:gap-5">
+    <p
+      class="item text-[#FFCD00] text-sm sm:text-base md:text-[16px] lg:text-[24px] uppercase"
+    >
+      partners
+    </p>
+    <h2
+      class="item text-2xl sm:text-3xl md:text-4xl lg:text-[56px] text-center leading-tight w-full sm:w-[400px] md:w-[700px] lg:w-[1033px] capitalize text-white"
+    >
+      our partners that help shape the lasting impact
+    </h2>
+    <p
+      class="item font-google font-medium w-full sm:w-[350px] md:w-[500px] lg:w-[570px] text-center text-sm sm:text-base md:text-[16px] text-[#7D7D7D]"
+    >
+      Join us for thrilling sessions, workshops, and networking opportunities
+      around the exciting world of technology.
+    </p>
+  </div>
+  <!-- second section -->
+  <div class="flex flex-col items-center gap-3 sm:gap-5 w-full">
+    <!-- first container -->
+    <div
+      class="flex flex-col sm:flex-row justify-center sm:justify-between w-full gap-3 sm:gap-5"
+    >
+      <div class={`item ${imageStyling}`}>
+        <img src="/images/2025/sponsor-visa.png" alt="" />
+      </div>
+      <div class={`item ${imageStyling}`}>
+        <img src="/images/2025/sponsor-google.png" alt="" />
+      </div>
+      <div class={`item ${imageStyling}`}>
+        <img src="/images/2025/sponsor-cnn.png" alt="" />
+      </div>
+    </div>
+
+    <!-- second container -->
+    <div
+      class="flex flex-col sm:flex-row justify-center sm:justify-between w-full gap-3 sm:gap-5"
+    >
+      <div class={`item ${imageStyling}`}>
+        <img src="/images/2025/sponsor-visa.png" alt="" />
+      </div>
+      <div class={`item ${imageStyling}`}>
+        <img src="/images/2025/sponsor-google.png" alt="" />
+      </div>
+      <div class={`item ${imageStyling}`}>
+        <img src="/images/2025/sponsor-line.png" alt="" />
+      </div>
+      <div class={`item ${imageStyling}`}>
+        <img src="/images/2025/sponsor-cnn.png" alt="" />
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .img-container {
+      border: 1px solid gray;
+      border-radius: 200px;
+      border-style: dashed;
+      border-spacing: 200px;
+    }
+
+    span {
+      color: #34a853;
+    }
+  </style>
+  <script>
+    import { animate, stagger, inView } from "motion";
+
+    let hasAnimated = false;
+
+    inView(".partner-container", (element, _entry) => {
+      if (hasAnimated) return;
+
+      const items = (element as HTMLElement).querySelectorAll(".item");
+
+      animate(
+        items,
+        { opacity: [0, 1], y: [20, 0] },
+        { duration: 0.8, delay: stagger(0.25) }
+      );
+
+      hasAnimated = true;
+      return () => {};
+    });
+  </script>
+</div>

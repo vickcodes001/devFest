@@ -1,0 +1,200 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import ProductAccordion from "@components/2025/ProductAccordion.astro";
+import type { ProductProps } from "@components/2025/ProductAccordion.astro";
+
+import productsData from "@data/2025/products.json";
+const products: ProductProps[] = productsData;
+---
+
+<BaseLayout
+  title="Enugu Devfest 2025"
+  description="DevFest Enugu 2024 will take place on Saturday, December 7, 2024 at Hotel Sylvia, Independence Avenue, Enugu, 400102"
+>
+
+<section class="showcase-container">
+<div class="text-center max-w-3xl space-y-6 px-4 py-20">
+  <span class="uppercase text-[#FFCD00] font-medium">product showcase</span>
+  <h1 class="font-bold text-3xl md:text-6xl capitalize leading-[120%]">We talk the talk, and walk the walk</h1>
+  <p class="font-medium px-10 md:px-32">A closer look at the product redefining what's possible through smart design and powerful functionality.</p>
+</div>
+</section>
+
+
+<section class="pb-16">
+  <div class="container mx-auto px-4">
+
+    <div class="max-w-7xl mx-auto space-y-6" id="product-grid">
+      {products.map((product) => (
+        <ProductAccordion product={product} />
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const productItems = document.querySelectorAll('.product-item');
+
+    // Filter functionality
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function(this: HTMLElement) {
+        const filter = this.getAttribute('data-filter');
+        
+        // Update active button styles
+        filterButtons.forEach(btn => {
+          const htmlBtn = btn as HTMLElement;
+          const filterValue = btn.getAttribute('data-filter');
+          
+          // Reset all buttons to inactive state
+          btn.classList.remove('active', 'bg-black', 'text-white');
+          btn.classList.add('bg-[#F5F5F5]', 'text-gray-700');
+          
+          // Update button content based on state
+          if (filterValue !== 'all') {
+            const label = btn.textContent?.replace(/[‹›\s]/g, '') || '';
+            btn.innerHTML = `<span>‹ ›${label}‹ ›</span>`;
+          }
+        });
+        
+        // Set clicked button to active state
+        this.classList.add('active', 'bg-black', 'text-white');
+        this.classList.remove('bg-[#F5F5F5]', 'text-gray-700');
+        
+        // Remove angle brackets from active button if not "All"
+        if (filter !== 'all') {
+          const label = this.textContent?.replace(/[‹›\s]/g, '') || '';
+          this.textContent = label;
+        }
+
+        // Filter products with animation
+        productItems.forEach(item => {
+          const category = item.getAttribute('data-category');
+          const htmlItem = item as HTMLElement;
+          
+          if (filter === 'all' || category === filter) {
+            htmlItem.style.display = 'block';
+            item.classList.add('animate-fadeIn');
+          } else {
+            htmlItem.style.display = 'none';
+            item.classList.remove('animate-fadeIn');
+          }
+        });
+      });
+    });
+
+    // Accordion functionality
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+    
+    accordionHeaders.forEach(header => {
+      header.addEventListener('click', function(this: HTMLElement, e: Event) {
+        e.stopPropagation();
+        
+        const accordionItem = this.closest('.accordion-item');
+        const content = accordionItem?.querySelector('.accordion-content') as HTMLElement;
+        const icon = this.querySelector('.accordion-icon') as HTMLElement;
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        
+        console.log('Icon found:', icon, 'isExpanded:', isExpanded);
+        
+        // Close all other accordions
+        accordionHeaders.forEach(otherHeader => {
+          if (otherHeader !== this) {
+            const otherItem = otherHeader.closest('.accordion-item');
+            const otherContent = otherItem?.querySelector('.accordion-content') as HTMLElement;
+            const otherIcon = otherHeader.querySelector('.accordion-icon') as HTMLElement;
+            
+            otherHeader.setAttribute('aria-expanded', 'false');
+            if (otherContent) {
+              otherContent.style.maxHeight = '0';
+            }
+            if (otherIcon) {
+              otherIcon.style.transform = 'rotate(90deg)';
+            }
+          }
+        });
+        
+        // Toggle current accordion
+        if (isExpanded) {
+          this.setAttribute('aria-expanded', 'false');
+          if (content) {
+            content.style.maxHeight = '0';
+          }
+          if (icon) {
+            icon.style.transform = 'rotate(90deg)';
+          }
+        } else {
+          this.setAttribute('aria-expanded', 'true');
+          if (content) {
+            content.style.maxHeight = content.scrollHeight + 'px';
+          }
+          if (icon) {
+            icon.style.transform = 'rotate(270deg)';
+          }
+        }
+      });
+    });
+  });
+</script>
+
+</BaseLayout>
+
+
+<style>
+  .showcase-container {
+    min-height: 50vh;
+    height: full;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    background-image: url("/images/2025/product-showcase-bg.svg");
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .product-item {
+    transition: all 0.3s ease;
+  }
+
+  .accordion-content {
+    transition: max-height 0.5s ease-in-out;
+  }
+
+  .accordion-icon {
+    transition: transform 0.3s ease;
+  }
+
+  .accordion-icon.rotate-180 {
+    transform: rotate(180deg);
+  }
+
+  .filter-btn {
+    transition: all 0.3s ease;
+  }
+
+  .filter-btn:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .filter-btn.active {
+    transform: scale(1.05);
+  }
+
+  .accordion-item:hover {
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  }
+</style>
