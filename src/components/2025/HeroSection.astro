@@ -24,17 +24,22 @@ import Icon from "@components/Icon.astro";
     </div>
     <!--  -->
     <p
-      class="item md:text-[22px] text-[gray] font-google font-normal w-full max-w-[700px] text-center tracking-[1px]"
+      class="item md:text-[24px] text-[gray] font-google font-normal w-full max-w-[700px] text-center tracking-[1px]"
     >
       Join us for thrilling sessions, showcases, and networking opportunities
       around the exciting world of technology.
     </p>
-    <button
-      class="item font-google font-[500px] flex items-center gap-1 md:gap-3 justify-center rounded-full bg-white mt-10 py-2 md:py-5 px-2 w-[100px] md:w-[200px] text-black text-[10px] md:text-[17px]"
-    >
-      <p>Register Now</p>
-      <Icon class:list={"fill-black size-[10px] md:size-[20px]"} icon="pixelated-right-arrow" />
-    </button>
+    <a href="https://gdg.community.dev/e/mg2vj7/" target="_blank">
+      <button
+        class="item font-google font-[500px] flex items-center gap-1 md:gap-3 justify-center rounded-full bg-white mt-10 py-2 md:py-5 px-2 w-[100px] md:w-[200px] text-black text-[10px] md:text-[17px]"
+      >
+        <p>Register Now</p>
+        <Icon
+          class:list={"fill-black size-[10px] md:size-[20px]"}
+          icon="pixelated-right-arrow"
+        />
+      </button>
+    </a>
   </div>
 
   <!-- floating images -->
@@ -84,7 +89,7 @@ import Icon from "@components/Icon.astro";
 
     inView(".hero-container", (element, _entry) => {
       if (hasAnimated) return;
-      
+
       const items = (element as HTMLElement).querySelectorAll(".item");
 
       animate(

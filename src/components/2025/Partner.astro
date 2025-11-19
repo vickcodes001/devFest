@@ -1,7 +1,7 @@
 ---
 import Icon from "@components/Icon.astro";
 const imageStyling =
-  "img-container flex items-center justify-center py-[20px] sm:py-[25px] md:py-[30px] bg-white w-full md:w-[388px] lg:w-[522px]";
+  "img-container flex items-center justify-center w-full md:w-[388px] lg:w-[600px] py-[20px] sm:py-[25px] md:py-[30px] bg-white";
 ---
 
 <div
@@ -15,19 +15,19 @@ const imageStyling =
       partners
     </p>
     <h2
-      class="item text-2xl sm:text-3xl md:text-4xl lg:text-[56px] text-center leading-tight w-full sm:w-[400px] md:w-[700px] lg:w-[1033px] capitalize text-white"
+      class="item text-white text-center font-bold text-4xl lg:text-[55px] tracking-tighter leading-tight max-w-[900px] w-full mx-auto capitalize"
     >
       our partners that help shape the lasting impact
     </h2>
     <p
-      class="item font-google font-medium w-full sm:w-[350px] md:w-[500px] lg:w-[570px] text-center text-sm sm:text-base md:text-[16px] text-[#7D7D7D]"
+      class="item font-google font-medium w-full md:w-[500px] lg:w-[700px] text-center text-sm sm:text-base text-[#7D7D7D] md:text-[20px] leading-[200px]"
     >
       Join us for thrilling sessions, workshops, and networking opportunities
       around the exciting world of technology.
     </p>
   </div>
   <!-- second section -->
-  <div class="flex flex-col items-center gap-3 sm:gap-5 w-full">
+  <div class="flex flex-col items-center gap-3 sm:gap-5 w-full max-w-[1600px]">
     <!-- first container -->
     <div
       class="flex flex-col sm:flex-row justify-center sm:justify-between w-full gap-3 sm:gap-5"
@@ -68,6 +68,10 @@ const imageStyling =
       border-radius: 200px;
       border-style: dashed;
       border-spacing: 200px;
+    }
+
+    p {
+      line-height: 40px;
     }
 
     span {
