@@ -50,19 +50,33 @@ import Icon from "@components/Icon.astro";
   </button>
 
   <!-- Desktop & Mobile Menu -->
-  <div 
+  <div
     id="menu-links"
     class="hidden fixed z-40 inset-0 bg-black bg-opacity-95 flex-col items-center justify-center gap-8 lg:static lg:flex lg:flex-row lg:bg-transparent lg:gap-0 lg:items-center lg:h-full transition-all duration-300 ease-in-out"
   >
-    <ul class="flex flex-col items-center gap-8 lg:flex-row lg:gap-10 text-base font-medium">
+    <ul
+      class="flex flex-col items-center gap-8 lg:flex-row lg:gap-10 text-base font-medium"
+    >
       <li>
-        <a href="#sponsors" class="text-white lg:text-black text-xl lg:text-base hover:text-yellow-400 lg:hover:text-gray-600 transition-colors">Sponsors</a>
+        <a
+          href="#sponsors"
+          class="text-white lg:text-black text-xl lg:text-base hover:text-yellow-400 lg:hover:text-gray-600 transition-colors"
+          >Sponsors</a
+        >
       </li>
       <li>
-        <a href="/product-showcase" class="text-white lg:text-black text-xl lg:text-base hover:text-yellow-400 lg:hover:text-gray-600 transition-colors">Product Showcase</a>
+        <a
+          href="/product-showcase"
+          class="text-white lg:text-black text-xl lg:text-base hover:text-yellow-400 lg:hover:text-gray-600 transition-colors"
+          >Product Showcase</a
+        >
       </li>
       <li>
-        <a href="#speakers" class="text-white lg:text-black text-xl lg:text-base hover:text-yellow-400 lg:hover:text-gray-600 transition-colors">Speakers</a>
+        <a
+          href="#speakers"
+          class="text-white lg:text-black text-xl lg:text-base hover:text-yellow-400 lg:hover:text-gray-600 transition-colors"
+          >Speakers</a
+        >
       </li>
       <!-- <li>
         <a
@@ -73,7 +87,9 @@ import Icon from "@components/Icon.astro";
       </li> -->
     </ul>
 
-    <div class="bg-[#101010] px-5 py-4 lg:py-0 text-[#FFB200] flex items-center lg:h-full mt-8 lg:mt-0 lg:ml-10 rounded-lg lg:rounded-none">
+    <div
+      class="bg-[#101010] px-2 md:px-5 py-4 lg:py-0 text-[#FFB200] flex items-center lg:h-full mt-8 lg:mt-0 lg:ml-10 rounded-lg lg:rounded-none"
+    >
       <p class="text-center lg:text-left">
         &lt;date&gt;<span class="text-white">10th - 12th December, 2025</span
         >&lt;/date&gt;
@@ -81,44 +97,45 @@ import Icon from "@components/Icon.astro";
     </div>
   </div>
 
-<script>
-  // Select DOM elements
-  const menuToggle = document.getElementById("menu-toggle");
-  const menuLinks = document.getElementById("menu-links");
-  const hamburgerIcon = document.getElementById("hamburger-icon");
-  const closeIcon = document.getElementById("close-icon");
-  const navItems = menuLinks?.querySelectorAll("a");
+  <script>
+    // Select DOM elements
+    const menuToggle = document.getElementById("menu-toggle");
+    const menuLinks = document.getElementById("menu-links");
+    const hamburgerIcon = document.getElementById("hamburger-icon");
+    const closeIcon = document.getElementById("close-icon");
+    const navItems = menuLinks?.querySelectorAll("a");
 
-  // Function to toggle the menu
-  const toggleMenu = () => {
-    const isMenuOpen = menuLinks?.classList.toggle("hidden");
-    menuLinks?.classList.toggle("flex", !isMenuOpen);
-
-    if (hamburgerIcon && closeIcon) {
-      hamburgerIcon.classList.toggle("hidden", !isMenuOpen);
-      closeIcon.classList.toggle("hidden", isMenuOpen);
-    }
-  };
-
-  // Toggle menu on button click
-  menuToggle?.addEventListener("click", toggleMenu);
-
-  // Close menu when a nav item is clicked
-  navItems?.forEach((item) => {
-    item.addEventListener("click", () => {
-      menuLinks?.classList.add("hidden");
-      menuLinks?.classList.remove("flex");
+    // Function to toggle the menu
+    const toggleMenu = () => {
+      const isMenuOpen = menuLinks?.classList.toggle("hidden");
+      menuLinks?.classList.toggle("flex", !isMenuOpen);
 
       if (hamburgerIcon && closeIcon) {
-        hamburgerIcon.classList.remove("hidden");
-        closeIcon.classList.add("hidden");
+        hamburgerIcon.classList.toggle("hidden", !isMenuOpen);
+        closeIcon.classList.toggle("hidden", isMenuOpen);
       }
-    });
-  });
-</script>
+    };
 
-<style>
-  ul {
-    font-family: "Syne", sans-serif;
-  }
-</style>
+    // Toggle menu on button click
+    menuToggle?.addEventListener("click", toggleMenu);
+
+    // Close menu when a nav item is clicked
+    navItems?.forEach((item) => {
+      item.addEventListener("click", () => {
+        menuLinks?.classList.add("hidden");
+        menuLinks?.classList.remove("flex");
+
+        if (hamburgerIcon && closeIcon) {
+          hamburgerIcon.classList.remove("hidden");
+          closeIcon.classList.add("hidden");
+        }
+      });
+    });
+  </script>
+
+  <style>
+    ul {
+      font-family: "Syne", sans-serif;
+    }
+  </style>
+</nav>
