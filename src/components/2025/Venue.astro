@@ -3,11 +3,11 @@ import Icon from "@components/Icon.astro";
 ---
 
 <div
-  class="venue-container flex flex-col justify-center items-center gap-10 py-20 md:h-[800px] bg-white overflow-hidden"
+  class="venue-container flex flex-col justify-center items-center gap-10 h-full py-20 bg-white overflow-hidden"
 >
   <!-- child container -->
   <div
-    class="relative flex flex-col md:flex-row bg-black md:h-[584px] w-full max-w-[1600px]"
+    class="relative flex flex-col md:flex-row bg-black w-full h-full max-w-[1600px]"
   >
     <!-- positioned circles -->
     <div>
@@ -23,7 +23,7 @@ import Icon from "@components/Icon.astro";
       </div>
       <!-- bottom mid -->
       <div
-        class="absolute hidden md:flex rounded-full bg-white h-10 w-10 left-[-20px] md:left-[62.5%] top-[60.5%] md:top-[95%]"
+        class="absolute hidden md:flex rounded-full bg-white h-10 w-10 left-[-20px] md:left-[62.6%] top-[60.5%] md:top-[97%]"
       >
       </div>
       <!-- bottom right -->
@@ -38,7 +38,7 @@ import Icon from "@components/Icon.astro";
       </div>
       <!-- top mid -->
       <div
-        class="absolute hidden md:flex rounded-full bg-white h-10 w-10 right-[-20px] md:right-[35%] top-[60.5%] md:top-[-10px]"
+        class="absolute hidden md:flex rounded-full bg-white h-10 w-10 right-[-20px] md:right-[34.9%] top-[60.5%] md:top-[-10px]"
       >
       </div>
     </div>
@@ -52,21 +52,40 @@ import Icon from "@components/Icon.astro";
       >
         &lt;&gt;<span>VENUE</span>&lt;/&gt;
       </div>
-      <div>
+
+      <!-- day 1 -->
+      <div class="flex flex-col items-center md:py-10 pb-10 md:pb-0">
+        <p class="text-[#FFB200]">Day 1</p>
+        <h2
+          class="item capitalize text-white text-center w-[350px] md:w-[703px] text-[40px] md:text-[56px]"
+        >
+          Roarhub, UNN, nsukka cafeOne, okpara avenue, enugu
+        </h2>
+        <div
+          class="item date w-[350px] text-[12px] px-5 text-[#EA4335] flex justify-center items-center text-center"
+        >
+          <p>&lt;date&gt;<span>5th December, 2025</span>&lt;/date&gt;</p>
+        </div>
+      </div>
+
+      <!-- day 2 -->
+      <div class="flex flex-col items-center md:py-10">
+        <p class="text-[#FFB200]">Day 2</p>
         <h2
           class="item capitalize text-white text-center w-[350px] md:w-[703px] text-[40px] md:text-[56px]"
         >
           the base landmark, aguleri street, enugu
         </h2>
+        <div
+          class="item date w-[350px] text-[12px] px-5 text-[#EA4335] flex justify-center items-center text-center"
+        >
+          <p>&lt;date&gt;<span>6th December, 2025</span>&lt;/date&gt;</p>
+        </div>
       </div>
-      <div
-        class="item date w-[350px] text-[12px] px-5 text-[#EA4335] flex justify-center items-center"
-      >
-        <p>&lt;date&gt;<span>10th - 12th December, 2025</span>&lt;/date&gt;</p>
-      </div>
+
       <a href="https://gdg.community.dev/e/mg2vj7/" target="_blank">
         <button
-          class="item font-google font-[500px] flex items-center gap-1 md:gap-3 justify-center rounded-full bg-white mt-10 py-2 md:py-5 px-2 w-[100px] md:w-[200px] text-black text-[10px] md:text-[17px]"
+          class="item font-google font-[500px] flex items-center gap-1 md:gap-3 justify-center rounded-full bg-white md:mt-10 py-2 md:py-5 px-2 w-[100px] md:w-[200px] text-black text-[10px] md:text-[17px]"
         >
           <p>Register Now</p>
           <Icon
@@ -78,7 +97,7 @@ import Icon from "@components/Icon.astro";
     </div>
 
     <!-- second section -->
-    <div class="flex flex-col md:flex-row md:w-[38%] gap-5 p-2 md:pl-2 h-full">
+    <div class="flex flex-col md:flex-row md:w-[38%] gap-5 p-2 md:pl-2">
       <img
         src="/images/2025/venueLine.png"
         alt=""
