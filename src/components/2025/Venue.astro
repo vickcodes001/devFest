@@ -3,93 +3,269 @@ import Icon from "@components/Icon.astro";
 ---
 
 <div
-  class="venue-container flex flex-col justify-center items-center gap-10 h-full py-20 bg-white overflow-hidden"
+  class="venue-container flex flex-col justify-center items-center gap-10 h-full py-20 bg-gradient-to-br from-gray-50 to-white overflow-hidden"
 >
   <!-- child container -->
   <div
-    class="relative flex flex-col md:flex-row bg-black w-full h-full max-w-[1600px]"
+    class="relative flex flex-col md:flex-row bg-gradient-to-br from-gray-900 to-black w-full h-full max-w-[1600px] rounded-3xl shadow-2xl"
   >
     <!-- positioned circles -->
     <div>
       <!-- top left -->
       <div
-        class="absolute rounded-full bg-white h-10 w-10 left-[-10px] top-[-10px]"
+        class="absolute rounded-full bg-gradient-to-br from-white to-gray-100 h-12 w-12 left-[-12px] top-[-12px] shadow-lg"
       >
       </div>
       <!-- bottom left -->
       <div
-        class="absolute rounded-full bg-white h-10 w-10 left-[-10px] bottom-[-10px]"
+        class="absolute rounded-full bg-gradient-to-br from-white to-gray-100 h-12 w-12 left-[-12px] bottom-[-12px] shadow-lg"
       >
       </div>
-      <!-- bottom mid -->
-      <div
-        class="absolute hidden md:flex rounded-full bg-white h-10 w-10 left-[-20px] md:left-[62.6%] top-[60.5%] md:top-[97%]"
-      >
-      </div>
+
       <!-- bottom right -->
       <div
-        class="absolute rounded-full bg-white h-10 w-10 right-[-10px] bottom-[-10px]"
+        class="absolute rounded-full bg-gradient-to-br from-white to-gray-100 h-12 w-12 right-[-12px] bottom-[-12px] shadow-lg"
       >
       </div>
       <!-- top right -->
       <div
-        class="absolute rounded-full bg-white h-10 w-10 right-[-10px] top-[-10px]"
-      >
-      </div>
-      <!-- top mid -->
-      <div
-        class="absolute hidden md:flex rounded-full bg-white h-10 w-10 right-[-20px] md:right-[34.9%] top-[60.5%] md:top-[-10px]"
+        class="absolute rounded-full bg-gradient-to-br from-white to-gray-100 h-12 w-12 right-[-12px] top-[-12px] shadow-lg"
       >
       </div>
     </div>
 
     <!-- first section -->
     <div
-      class="flex flex-col justify-between items-center gap-10 md:gap-0 md:w-[65%] p-20 h-[100%]"
+      class="flex flex-col justify-between items-center gap-10 md:gap-0 md:w-[65%] p-5 md:p-20 h-[100%]"
     >
       <div
-        class="item venue flex justify-center items-center h-10 w-[100px] px-20 py-7 rounded text-white"
+        class="item venue flex justify-center items-center h-10 w-[120px] md:px-20 py-7 rounded-lg text-white shadow-lg hover:scale-105 transition-transform mb-5"
       >
-        &lt;&gt;<span>VENUE</span>&lt;/&gt;
+        &lt;&gt;<span class="font-semibold">VENUE</span>&lt;/&gt;
       </div>
 
-      <!-- day 1 -->
-      <div class="flex flex-col items-center md:py-10 pb-10 md:pb-0">
-        <p class="text-[#FFB200]">Day 1</p>
+      <!-- day 1 - Blockchain Hub -->
+      <div
+        class="flex flex-col items-start md:py-10 pb-10 w-full bg-white/5 rounded-2xl p-6 md:p-8 mb-6"
+      >
+        <div class="flex items-center gap-3 mb-4">
+          <div
+            class="bg-gradient-to-r from-[#ff7daf] to-[#ff5d9f] px-4 py-2 rounded-lg shadow-lg"
+          >
+            <p class="text-white font-bold text-sm">DAY 1</p>
+          </div>
+          <div class="text-[#FFB200] text-sm font-semibold">
+            5th December, 2025
+          </div>
+        </div>
+
         <h2
-          class="item capitalize text-white text-center w-[350px] md:w-[703px] text-[40px] md:text-[56px]"
+          class="item text-white w-[350px] md:w-[703px] text-[32px] md:text-[48px] font-bold leading-tight mb-6"
         >
-          Roarhub, UNN, nsukka cafeOne, okpara avenue, enugu
+          Blockchain Hub & Roarhub
         </h2>
+
+        <!-- Address Card -->
         <div
-          class="item date w-[350px] text-[12px] px-5 text-[#EA4335] flex justify-center items-center text-center"
+          class="item bg-gradient-to-r from-[#ff7daf]/20 to-transparent p-6 rounded-xl border-l-4 border-[#ff7daf] w-full max-w-[600px]"
         >
-          <p>&lt;date&gt;<span>5th December, 2025</span>&lt;/date&gt;</p>
+          <div class="flex items-start gap-4 mb-4">
+            <svg
+              class="w-6 h-6 text-[#ff7daf] mt-1 flex-shrink-0"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+              ></path>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+            <div>
+              <p class="text-gray-400 text-xs font-semibold mb-2">ADDRESS</p>
+              <p
+                class="text-white text-base md:text-lg font-medium leading-relaxed"
+              >
+                No 1 Temple Avenue, Behind First Bank Headquarters, Enugu
+              </p>
+            </div>
+          </div>
+
+          <a
+            href="https://maps.google.com/?q=No+1+Temple+Avenue+Behind+First+Bank+Headquarters+Enugu"
+            target="_blank"
+          >
+            <button
+              class="flex items-center gap-2 bg-transparent border-2 border-white/30 hover:border-white/60 text-white px-5 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
+                ></path>
+              </svg>
+              Get Directions
+            </button>
+          </a>
+
+          <div class="flex flex-col items-start gap-4 my-4">
+            <div class="flex items-center gap-4">
+              <svg
+                class="w-6 h-6 text-[#ff7daf] mt-1 flex-shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                ></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              <div>
+                <p class="text-gray-400 text-xs font-semibold mb-2">ADDRESS</p>
+                <p
+                  class="text-white text-base md:text-lg font-medium leading-relaxed"
+                >
+                  Roarhub, UNN, Nsukka
+                </p>
+              </div>
+            </div>
+            <!-- direction -->
+            <a
+              href="https://maps.google.com/?q=Roarhub+UNN+Nsukka"
+              target="_blank"
+            >
+              <button
+                class="flex items-center gap-2 bg-transparent border-2 border-white/30 hover:border-white/60 text-white px-5 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
+                  ></path>
+                </svg>
+                Get Directions
+              </button>
+            </a>
+          </div>
         </div>
       </div>
 
       <!-- day 2 -->
-      <div class="flex flex-col items-center md:py-10">
-        <p class="text-[#FFB200]">Day 2</p>
+      <div
+        class="flex flex-col items-start md:py-10 w-full bg-white/5 rounded-2xl p-6 md:p-8"
+      >
+        <div class="flex items-center gap-3 mb-4">
+          <div
+            class="bg-gradient-to-r from-[#ff7daf] to-[#ff5d9f] px-4 py-2 rounded-lg shadow-lg"
+          >
+            <p class="text-white font-bold text-sm">DAY 2</p>
+          </div>
+          <div class="text-[#FFB200] text-sm font-semibold">
+            6th December, 2025
+          </div>
+        </div>
+
         <h2
-          class="item capitalize text-white text-center w-[350px] md:w-[703px] text-[40px] md:text-[56px]"
+          class="item text-white w-[350px] md:w-[703px] text-[32px] md:text-[48px] font-bold leading-tight mb-6"
         >
-          the base landmark, aguleri street, enugu
+          The Base Landmark
         </h2>
+
+        <!-- Address Card -->
         <div
-          class="item date w-[350px] text-[12px] px-5 text-[#EA4335] flex justify-center items-center text-center"
+          class="item bg-gradient-to-r from-[#ff7daf]/20 to-transparent p-6 rounded-xl border-l-4 border-[#ff7daf] w-full max-w-[600px]"
         >
-          <p>&lt;date&gt;<span>6th December, 2025</span>&lt;/date&gt;</p>
+          <div class="flex items-start gap-4 mb-4">
+            <svg
+              class="w-6 h-6 text-[#ff7daf] mt-1 flex-shrink-0"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+              ></path>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+            <div>
+              <p class="text-gray-400 text-xs font-semibold mb-2">ADDRESS</p>
+              <p
+                class="text-white text-base md:text-lg font-medium leading-relaxed capitalize"
+              >
+                Aguleri Street, Enugu
+              </p>
+            </div>
+          </div>
+
+          <a
+            href="https://maps.google.com/?q=The+Base+Landmark+Aguleri+Street+Enugu"
+            target="_blank"
+          >
+            <button
+              class="flex items-center gap-2 bg-transparent border-2 border-white/30 hover:border-white/60 text-white px-5 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
+                ></path>
+              </svg>
+              Get Directions
+            </button>
+          </a>
         </div>
       </div>
 
       <a href="https://gdg.community.dev/e/mg2vj7/" target="_blank">
         <button
-          class="item font-google font-[500px] flex items-center gap-1 md:gap-3 justify-center rounded-full bg-white md:mt-10 py-2 md:py-5 px-2 w-[100px] md:w-[200px] text-black text-[10px] md:text-[17px]"
+          class="item font-google font-semibold flex items-center gap-1 md:gap-3 justify-center rounded-full bg-white md:mt-10 py-3 md:py-6 px-4 w-[140px] md:w-[220px] text-black text-[12px] md:text-[18px] hover:bg-[#ff7daf] hover:text-white hover:scale-110 transition-all duration-300 shadow-lg"
         >
           <p>Register Now</p>
           <Icon
-            class:list={"fill-black size-[10px] md:size-[20px]"}
+            class:list={"fill-black size-[12px] md:size-[22px]"}
             icon="pixelated-right-arrow"
           />
         </button>
@@ -103,19 +279,19 @@ import Icon from "@components/Icon.astro";
       <img
         src="/images/2025/venueLine.png"
         alt=""
-        class="h-[1px] md:h-full pl-5 pr-5 md:p-0"
+        class="h-[1px] md:h-full px-5 md:p-0 opacity-70"
       />
       <img
         src="/images/2025/venueX.png"
         alt=""
-        class="absolute animate-tilt w-[30px] md:w-[45px] right-[5%] top-[10%]"
+        class="absolute animate-tilt w-[30px] md:w-[45px] right-[5%] top-[10%] opacity-80 hidden md:flex"
       />
-      <div class="flex flex-col justify-end h-full w-full">
+      <div class="flex flex-col justify-end h-full w-full px-5 md:px-0">
         <div class="flex flex-col justify-end w-full h-[70%]">
           <img
             src="/images/2025/venuebg.png"
             alt="an image of a building"
-            class="item w-full h-full object-cover pt-[60px]"
+            class="item w-full h-full object-cover pt-[60px] rounded-lg shadow-xl"
           />
         </div>
       </div>
@@ -125,7 +301,7 @@ import Icon from "@components/Icon.astro";
   <style>
     .venue {
       transform: rotate(7deg);
-      background-color: #ff7daf;
+      background: linear-gradient(135deg, #ff7daf 0%, #ff5d9f 100%);
     }
 
     .date span {
